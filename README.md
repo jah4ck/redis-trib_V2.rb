@@ -10,7 +10,8 @@ gem install redis
 
 ### create cluster
 redis-trib_V2.rb create --replicas 1  10.122.102.56:7000 10.108.33.76:7000 10.108.31.200:7000 10.122.102.56:7001 10.108.33.76:7001 10.108.31.200:7001
-
+(--replicas 1 => 1 slave / master)
+(if you are 9 hosts, and --replicas 2 ==> 1-3 host = master // 4-9 = slave )
 
 ### vérification du cluster
 redis-cli -p 7000 cluster nodes
